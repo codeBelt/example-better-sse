@@ -1,0 +1,44 @@
+{
+  "name": "bun-typescript-nodejs",
+  "version": "1.0.0",
+  "description": "TypeScript project compiled with Bun for Node.js",
+  "module": "src/app.ts",
+  "type": "module",
+  "private": true,
+  "main": "dist/app.js",
+  "scripts": {
+    "---------- Dev --------------------------------------------------------": "",
+    "dev": "npm run build && npm run start",
+    "build": "bun tsc",
+    "---------- Prod -------------------------------------------------------": "",
+    "start": "node dist/app.js",
+    "---------- Lint -------------------------------------------------------": "",
+    "ts": "tsc --noEmit",
+    "ts:watch": "npm run ts -- --watch",
+    "---------- Test --------------------------------------------------------": "",
+    "test": "vitest --watch=false",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "---------- Helper -----------------------------------------------------": "",
+    "format": "npx prettier --write .",
+    "-----------------------------------------------------------------------": ""
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "better-sse": "0.14.1",
+    "bun": "1.2.5",
+    "cors": "2.8.5",
+    "express": "4.21.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cors": "2.8.17",
+    "@types/express": "^5.0.0",
+    "prettier": "3.5.3"
+  },
+  "peerDependencies": {
+    "typescript": "5.8.2"
+  }
+}
